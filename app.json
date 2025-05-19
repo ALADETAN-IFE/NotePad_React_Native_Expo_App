@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "schedBuddy",
-    "slug": "schedBuddy",
+    "name": "notepad",
+    "slug": "notepad",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -36,6 +36,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "9d42b165-6446-4fd4-a26c-515c7350f76d"
+      }
+    },
+    "owner": "ifecodes"
   }
 }
