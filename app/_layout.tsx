@@ -1,5 +1,5 @@
 import { Stack } from "expo-router";
-import "./global.css"
+import "./global.css";
 
 export default function RootLayout() {
   return (
@@ -9,10 +9,9 @@ export default function RootLayout() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="/note/[id]"
+          name="note/[id]"
           options={{ headerShown: false }}
         />
     </Stack>
-  )  
-    ;
+  );
 }

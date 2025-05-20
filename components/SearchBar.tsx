@@ -1,9 +1,23 @@
-import { View, Text } from 'react-native'
+import { TextInput, View } from 'react-native';
 
-const SearchBar = () => {
+interface searchProps {
+  onChange: (text: string) => void;
+  value: string;
+}
+const SearchBar = ({onChange, value}: searchProps) => {
+
+
+
   return (
-    <View>
-      <Text>SearchBar</Text>
+    <View className='h-14 w-full justify-center items-center mb-2'>
+      
+      <TextInput 
+        placeholder="SearchBar" 
+        className="w-[90%] h-10 bg-gray-200 rounded-lg p-2.5 mt-1 mb-1 overflow-hidden flex-1 gap-1"
+        placeholderTextColor="#000"   
+        onChangeText={onChange}
+        value={value}
+      />
     </View>
   )
 }
