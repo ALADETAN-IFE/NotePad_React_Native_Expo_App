@@ -292,7 +292,7 @@ export default function Index() {
             </View>
           ))}
         <View>
-        <AddNoteBtn />
+        <AddNoteBtn onPress={() => setIsAddingNote(true)} />
       </View>
       </View>
     </SafeAreaView>
