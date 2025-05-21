@@ -13,12 +13,15 @@ const COLORS = [
 interface FormProps {
   onSubmit?: (note: { title: string; content: string; color: string }) => void
   onCancel?: () => void
+  main?: string
+  about?: string
+  style?: string
 }
 
-const AddNoteForm = ({ onSubmit, onCancel }: FormProps) => {
-  const [title, setTitle] = useState('')
-  const [content, setContent] = useState('')
-  const [color, setColor] = useState(COLORS[0])
+const AddNoteForm = ({ onSubmit, onCancel, main, about, style }: FormProps) => {
+  const [title, setTitle] = useState(main || '')
+  const [content, setContent] = useState(about || '')
+  const [color, setColor] = useState(style || COLORS[0])
 
   const handleSubmit = () => {
     if (title.trim() && content.trim()) {

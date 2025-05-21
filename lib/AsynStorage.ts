@@ -75,3 +75,21 @@ export const deleteAllNote = async () => {
   }
 };
 
+export const updateNote = async (id: string, updatedNote: Note) => {
+  try {
+    const savedNotes = await AsyncStorage.getItem('notes');
+    if (savedNotes) {
+      const notes = JSON.parse(savedNotes);
+      const noteIndex = notes.findIndex((e: Note) => e.id === id);
+
+      if (noteIndex !== -1) {
+        notes[noteIndex] = { ...notes[noteIndex], ...updatedNote };
+        await AsyncStorage.setItem('notes', JSON.stringify(notes));
+        return 'Note updated successfully';
+      }
+    }
+    return 'Note not found';
+  } catch (error) {
+    console.error('Error updating note', error);
+  }
+}
