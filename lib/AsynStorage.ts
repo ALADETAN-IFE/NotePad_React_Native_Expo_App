@@ -81,6 +81,7 @@ export const updateNote = async (id: string, updatedNote: Note) => {
     if (savedNotes) {
       const notes = JSON.parse(savedNotes);
       const noteIndex = notes.findIndex((e: Note) => e.id === id);
+      console.log('noteIndex', noteIndex);
 
       if (noteIndex !== -1) {
         notes[noteIndex] = { ...notes[noteIndex], ...updatedNote };
