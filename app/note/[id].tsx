@@ -98,13 +98,13 @@ const NoteScreen = () => {
         <View className="flex-row justify-between">
 
           <TouchableWithoutFeedback onPress={() => navigation.goBack()}>
-            <Text className="text-white bg-black p-3 px-3.5 rounded-lg">
+            <Text className="text-white cursor-pointer bg-black p-3 px-3.5 rounded-lg">
               {" "}
               Go Back{" "}
             </Text>
           </TouchableWithoutFeedback>
           <TouchableWithoutFeedback onPress={() => deleteNote()}>
-            <Text className="text-white bg-red-400 p-3 px-3.5 rounded-lg">
+            <Text className="text-white cursor-pointer bg-red-400 p-3 px-3.5 rounded-lg">
               {
                 isDeleting ? " Deleting... " : " Delete "
               }
@@ -138,7 +138,8 @@ const NoteScreen = () => {
                         multiline
                         textAlignVertical="top"
                         cursorColor="#fff"
-                        className="text-white text-3xl font-bold p-0"
+                        style={{ textAlignVertical: 'top', paddingTop:0 }}
+                        className="text-white text-3xl font-bold p-0 min-h-[30px] max-h-none border-none outline-none"
                         value={editingNote!.title}
                         onChangeText={(text) =>
                           setEditingNote({ ...editingNote!, title: text })
@@ -148,7 +149,7 @@ const NoteScreen = () => {
                         multiline
                         textAlignVertical="top"
                         cursorColor="#fff"
-                        className="text-white text-xl pl-2 p-0"
+                        className="text-white text-xl pl-2 p-0 border-none min-h-[30px] outline-none"
                         value={editingNote!.content}
                         onChangeText={(text) =>
                           setEditingNote({ ...editingNote!, content: text })
@@ -181,7 +182,7 @@ const NoteScreen = () => {
           )}
           {isEditing && (
             <TouchableWithoutFeedback onPress={() => editNote(editingNote!)}>
-              <Text className="text-white bg-green-500 p-3 px-3.5 text-center rounded-lg absolute right-5 bottom-20 z-10">
+              <Text className="text-white cursor-pointer bg-green-500 p-3 px-3.5 text-center rounded-lg absolute right-5 bottom-20 z-10">
                 {
                   isSaving ? " Saving... " : " Save "
                 }

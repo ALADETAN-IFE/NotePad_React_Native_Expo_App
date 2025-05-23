@@ -104,7 +104,7 @@ export default function Index() {
 
 
   return (
-    <SafeAreaView className="flex-1 bg-slate-500 min-h-[100vh] relative">
+    <SafeAreaView className="flex-1 bg-slate-500 min-h-[100vh] relative pb-4">
       {
         isAddingNote && (
           <AddNoteForm 
@@ -113,7 +113,7 @@ export default function Index() {
           />
       )}
       <View className="p-4 relative flex-1">
-        <Text className="text-white text-3xl text-center mb-1">NotePad</Text>
+        <Text className="text-white text-3xl text-center mb-1">NotePads</Text>
           <SearchBar onChange={(text: string) => setSearchInput(text)} value={searchInput} />
      
 
