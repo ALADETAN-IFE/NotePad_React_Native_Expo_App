@@ -17,7 +17,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/logo.png",
+        "foregroundImage": "./assets/images/logo1024x1024png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.ifecodes.notepad"
@@ -32,7 +32,7 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/logo1024x1024.png",
+          "image": "./assets/images/logo.png",
           "imageWidth": 230,
           "resizeMode": "cover",
           "backgroundColor": "#ffffff"
