@@ -5,7 +5,7 @@ import SearchBar from "@/components/SearchBar";
 import { createNote, loadAllNote } from "@/lib/AsynStorage";
 import { useNavigation } from "expo-router";
 import { useEffect, useState } from "react";
-import { FlatList, Text, View } from "react-native";
+import { ActivityIndicator, FlatList, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
@@ -115,11 +115,14 @@ export default function Index() {
       <View className="p-4 relative flex-1">
         <Text className="text-white text-3xl text-center mb-1">NotePad</Text>
           <SearchBar onChange={(text: string) => setSearchInput(text)} value={searchInput} />
-        {loading && (
-          <View className="w-full h-full bg-slate-500 flex-1 justify-center items-center">
-            <Text className="text-white">Loading...</Text>
-          </View>
-        )}
+     
+
+         {loading && (
+            <View className="h-[90vh] w-full  bg-slate-500 flex-1 justify-center items-center">
+              <ActivityIndicator size="large" color="#fff" />
+              <Text className="text-white">Loading...</Text>
+            </View>
+          )}
         {error && (
           <View className="w-full h-full bg-slate-500 flex-1 justify-center items-center">
             <Text className="text-white">{error}</Text>
