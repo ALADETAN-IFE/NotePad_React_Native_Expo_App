@@ -17,7 +17,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/logo1024x1024png",
+        "foregroundImage": "./assets/images/logo1024x1024.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.ifecodes.notepad"
