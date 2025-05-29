@@ -113,7 +113,7 @@ export default function Index() {
           />
       )}
       <View className="p-4 relative flex-1">
-        <Text className="text-white text-3xl text-center mb-1">NotePads</Text>
+        <Text className="text-white text-3xl text-center mb-1">NotePad</Text>
           <SearchBar onChange={(text: string) => setSearchInput(text)} value={searchInput} />
      
 

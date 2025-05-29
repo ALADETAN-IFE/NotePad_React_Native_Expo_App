@@ -2,13 +2,14 @@
   "expo": {
     "name": "Notepad",
     "slug": "notepad",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
-    "icon": "./assets/images/logo.png",
+    "icon": "./assets/images/logo1024x1024.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
+      "buildNumber": "2",
       "supportsTablet": true,
       "bundleIdentifier": "com.ifecodes.notepad",
       "infoPlist": {
@@ -16,6 +17,7 @@
       }
     },
     "android": {
+      "versionCode": 2,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/logo1024x1024.png",
         "backgroundColor": "#ffffff"
@@ -32,9 +34,9 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/logo.png",
+          "image": "./assets/images/logo1024x1024.png",
           "imageWidth": 230,
-          "resizeMode": "cover",
+          "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
       ]
@@ -50,6 +52,12 @@
         "projectId": "9d42b165-6446-4fd4-a26c-515c7350f76d"
       }
     },
-    "owner": "ifecodes"
+    "owner": "ifecodes",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/9d42b165-6446-4fd4-a26c-515c7350f76d"
+    }
   }
 }

@@ -1,8 +1,13 @@
 import { Stack } from "expo-router";
 import { StatusBar } from 'expo-status-bar';
 import "./global.css";
+import { useCheckForUpdates } from "@/hooks/useCheckForUpdates";
 
 export default function RootLayout() {
+
+  useCheckForUpdates()
+  
+
   return (
     <>
        {/* Light content (white text/icons) for dark backgrounds */}
