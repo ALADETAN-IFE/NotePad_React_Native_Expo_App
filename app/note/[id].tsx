@@ -89,7 +89,7 @@ const NoteScreen = () => {
   }
 
   return (
-    <SafeAreaView className="flex-1 bg-slate-500">
+    <View className="flex-1 bg-slate-500">
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : undefined}
         className="flex-1"
@@ -191,7 +191,7 @@ const NoteScreen = () => {
           )}
         </View>
       </KeyboardAvoidingView>
-    </SafeAreaView>
+    </View>
   );
 };
 

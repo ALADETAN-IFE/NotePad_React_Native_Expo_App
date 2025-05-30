@@ -1,27 +1,30 @@
-import { Stack } from "expo-router";
-import { StatusBar } from 'expo-status-bar';
-import "./global.css";
+import UpdatePopup from "@/components/UpdatePopup";
 import { useCheckForUpdates } from "@/hooks/useCheckForUpdates";
+import { Stack } from "expo-router";
+import { StatusBar } from "expo-status-bar";
+import React, { useState } from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
+import "./global.css";
 
 export default function RootLayout() {
-
-  useCheckForUpdates()
-  
+  const { updateMessage, isUpdateAvailable } = useCheckForUpdates();
+  const [modalVisible, setModalVisible] = useState(true);
 
   return (
     <>
-       {/* Light content (white text/icons) for dark backgrounds */}
-      <StatusBar style="light" backgroundColor="#64748b" /> {/* bg-slate-500 in Tailwind */}
-      <Stack >
-        <Stack.Screen
-          name="index"
-          options={{ headerShown: false }}
+      <StatusBar style="light" />
+      <SafeAreaView style={{ flex: 1, backgroundColor: "#64748b" }}>
+        <UpdatePopup
+          visible={modalVisible}
+          message={updateMessage}
+          updateAvailable={isUpdateAvailable}
+          onClose={() => setModalVisible(false)}
         />
-        <Stack.Screen
-          name="note/[id]"
-          options={{ headerShown: false }}
-        />
-      </Stack>
+        <Stack>
+          <Stack.Screen name="index" options={{ headerShown: false }} />
+          <Stack.Screen name="note/[id]" options={{ headerShown: false }} />
+        </Stack>
+      </SafeAreaView>
     </>
   );
 }

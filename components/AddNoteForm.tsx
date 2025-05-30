@@ -21,14 +21,17 @@ interface FormProps {
 const AddNoteForm = ({ onSubmit, onCancel, main, about, style }: FormProps) => {
   const [title, setTitle] = useState(main || '')
   const [content, setContent] = useState(about || '')
-  const [color, setColor] = useState(style || COLORS[0])
+  const RandomColorIndex = Math.floor(Math.random() * COLORS.length);
+  const [color, setColor] = useState(style || COLORS[RandomColorIndex])
+
+
 
   const handleSubmit = () => {
     if (title.trim() && content.trim()) {
       onSubmit?.({ title, content, color })
       setTitle('')
       setContent('')
-      setColor(COLORS[0])
+      setColor(COLORS[RandomColorIndex])
     }
   }
 

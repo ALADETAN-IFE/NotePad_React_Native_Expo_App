@@ -20,7 +20,8 @@
       "versionCode": 2,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/logo1024x1024.png",
-        "backgroundColor": "#ffffff"
+        "monochromeImage": "./assets/images/logo1024x1024.png",
+        "backgroundColor": "transparent"
       },
       "package": "com.ifecodes.notepad"
     },
@@ -37,7 +38,7 @@
           "image": "./assets/images/logo1024x1024.png",
           "imageWidth": 230,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#64748b"
         }
       ]
     ],

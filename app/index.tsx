@@ -6,12 +6,11 @@ import { createNote, loadAllNote } from "@/lib/AsynStorage";
 import { useNavigation } from "expo-router";
 import { useEffect, useState } from "react";
 import { ActivityIndicator, FlatList, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
   const navigation = useNavigation();
 
-  const [loading, setLoading] = useState<Boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
   const [notes, setNotes] = useState<Note[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [searchInput, setSearchInput] = useState<string>("");
@@ -104,7 +103,7 @@ export default function Index() {
 
 
   return (
-    <SafeAreaView className="flex-1 bg-slate-500 min-h-[100vh] relative pb-4">
+    <View className="flex-1 bg-slate-500 min-h-[100vh] relative pb-4">
       {
         isAddingNote && (
           <AddNoteForm 
@@ -113,7 +112,7 @@ export default function Index() {
           />
       )}
       <View className="p-4 relative flex-1">
-        <Text className="text-white text-3xl text-center mb-1">NotePad by IfeCodes</Text>
+        <Text className="text-white text-3xl text-center mb-1">NotePad</Text>
           <SearchBar onChange={(text: string) => setSearchInput(text)} value={searchInput} />
      
 
@@ -162,6 +161,6 @@ export default function Index() {
         <AddNoteBtn onPress={() => setIsAddingNote(true)} />
       </View>
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
