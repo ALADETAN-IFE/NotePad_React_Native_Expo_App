@@ -2,14 +2,13 @@
   "expo": {
     "name": "Notepad",
     "slug": "notepad",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/images/logo1024x1024.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "buildNumber": "2",
       "supportsTablet": true,
       "bundleIdentifier": "com.ifecodes.notepad",
       "infoPlist": {
@@ -17,11 +16,10 @@
       }
     },
     "android": {
-      "versionCode": 2,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/logo1024x1024.png",
         "monochromeImage": "./assets/images/logo1024x1024.png",
-        "backgroundColor": "transparent"
+        "backgroundColor": "#00000000"
       },
       "package": "com.ifecodes.notepad"
     },
