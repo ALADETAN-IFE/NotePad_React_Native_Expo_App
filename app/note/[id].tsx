@@ -1,3 +1,4 @@
+import MessageModal from "@/components/MessageModal";
 import { deleteOneNote, loadOneNote, updateNote } from "@/lib/AsynStorage";
 import { useLocalSearchParams, useNavigation } from "expo-router";
 import { useEffect, useState } from "react";
@@ -23,7 +24,9 @@ const NoteScreen = () => {
   const [isEditing, setIsEditing] = useState<Boolean>(false);
   const [editingNote, setEditingNote] = useState<Note | null>(null);
   const [isDeleting, setIsDeleting] = useState<Boolean>(false);
-  const[isSaving, setIsSaving] = useState<Boolean>(false);
+  const [isSaving, setIsSaving] = useState<Boolean>(false);
+  const [modalVisible, setModalVisible] = useState<boolean>(false);
+  const [message, setMessage] = useState<string>("hello");
 
   const fetchNote = async () => {
     try {
@@ -90,6 +93,13 @@ const NoteScreen = () => {
 
   return (
     <View className="flex-1 bg-slate-500">
+      <MessageModal
+        visible={modalVisible}
+        message={message}
+        type="deleteMode"
+        handleDelete={deleteNote}
+        onClose={() => setModalVisible(false)}
+      />
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : undefined}
         className="flex-1"
@@ -103,7 +113,7 @@ const NoteScreen = () => {
               Go Back{" "}
             </Text>
           </TouchableWithoutFeedback>
-          <TouchableWithoutFeedback onPress={() => deleteNote()}>
+          <TouchableWithoutFeedback onPress={() => setModalVisible(true)}>
             <Text className="text-white cursor-pointer bg-red-400 p-3 px-3.5 rounded-lg">
               {
                 isDeleting ? " Deleting... " : " Delete "

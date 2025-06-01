@@ -36,14 +36,14 @@ const UpdatePopup: React.FC<UpdatePopupProps> = ({
             >
               <Text className="text-white text-center">Update Now</Text>
             </TouchableOpacity>
-          ) : (
+          ) : message !== "Checking for updates..." ? (
             <TouchableOpacity
               onPress={onClose}
               className="bg-blue-500 rounded-full px-6 py-2"
             >
               <Text className="text-white text-center">Close</Text>
             </TouchableOpacity>
-          )}
+          ) : null}
         </View>
       </View>
     </Modal>

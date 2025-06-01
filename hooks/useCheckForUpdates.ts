@@ -10,8 +10,8 @@ export function useCheckForUpdates() {
   useEffect(() => {
     const check = async () => {
       try {
-        
-      console.log('Runtime version:', Updates.runtimeVersion);
+        if(__DEV__) { setUpdateMessage("Development mode - skipping update check."); return; } // Skip update check in development mode
+        console.log('Runtime version:', Updates.runtimeVersion);
         const update = await Updates.checkForUpdateAsync();
         if (update.isAvailable) {
           setUpdateMessage("Update available. Reload to update.");
