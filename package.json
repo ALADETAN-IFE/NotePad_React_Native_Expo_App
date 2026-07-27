@@ -3,9 +3,9 @@
   "main": "expo-router/entry",
   "version": "1.0.1",
   "scripts": {
-    "start": "expo start",
-    "dev": "expo start --dev-client",
-    "build": "eas build --profile production --platform all",
+    "start": "node api.js && expo start",
+    "dev": "node api.js && expo start --dev-client",
+    "build": "node api.js && eas build --profile production --platform all",
     "buildAndroid": "eas build --profile production --platform android",
     "buildiOS": "eas build --profile production --platform ios",
     "reset-project": "node ./scripts/reset-project.js",
