@@ -1,0 +1,33 @@
+{
+  "default_branch": "main",
+  "branches": [
+    "dependabot/npm_and_yarn/compression-1.8.2",
+    "dependabot/npm_and_yarn/fast-uri-3.1.8",
+    "dependabot/npm_and_yarn/multi-57637e47fe",
+    "dependabot/npm_and_yarn/shell-quote-1.12.0",
+    "dependabot/npm_and_yarn/source-map-js-1.2.2",
+    "main",
+    "repoguard/fixes-1791604459473",
+    "repoguard/fixes-1791604491779"
+  ],
+  "parent": {
+    "dependabot/npm_and_yarn/compression-1.8.2": "main",
+    "dependabot/npm_and_yarn/fast-uri-3.1.8": "main",
+    "dependabot/npm_and_yarn/multi-57637e47fe": "main",
+    "dependabot/npm_and_yarn/shell-quote-1.12.0": "main",
+    "dependabot/npm_and_yarn/source-map-js-1.2.2": "main",
+    "main": null,
+    "repoguard/fixes-1791604459473": "main",
+    "repoguard/fixes-1791604491779": "main"
+  },
+  "order": [
+    "main",
+    "dependabot/npm_and_yarn/compression-1.8.2",
+    "dependabot/npm_and_yarn/fast-uri-3.1.8",
+    "dependabot/npm_and_yarn/multi-57637e47fe",
+    "dependabot/npm_and_yarn/shell-quote-1.12.0",
+    "dependabot/npm_and_yarn/source-map-js-1.2.2",
+    "repoguard/fixes-1791604459473",
+    "repoguard/fixes-1791604491779"
+  ]
+}
